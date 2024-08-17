@@ -1,0 +1,24 @@
+# Use an official Node.js runtime as a parent image
+FROM node:22.6
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY packages/* ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Set environment variables (not secure!)
+ENV MONGODB_URL=mongodb://localhost:27017/
+
+
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Command to run the application
+CMD ["node", "index.js"]
