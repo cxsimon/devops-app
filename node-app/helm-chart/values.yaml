@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: devops-task-node-app
+  repository: public.ecr.aws/x2j4b2n8/node-app
   tag: "latest"
   pullPolicy: IfNotPresent
 

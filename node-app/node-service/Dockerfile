@@ -13,10 +13,6 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Set environment variables (not secure!)
-ENV MONGODB_URL=mongodb://localhost:27017/
-
-
 # Expose the port the app runs on
 EXPOSE 3000
 
