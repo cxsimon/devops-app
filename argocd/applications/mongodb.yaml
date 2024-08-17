@@ -8,12 +8,15 @@ spec:
     namespace: default  
     server: https://kubernetes.default.svc
   source:
-    repoURL: 'oci://registry-1.docker.io/bitnamicharts/mongodb'
+    repoURL: 'https://charts.bitnami.com/bitnami'
     chart: mongodb
     targetRevision: 13.0.1  
     helm:
-      valueFiles:
-        - path: mongo-values.yaml  
+      values: |
+          image:
+            tag: "6.0.0"
+          persistence:
+            enabled: false
   project: default
   syncPolicy:
     automated:
