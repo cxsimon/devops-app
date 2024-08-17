@@ -1,0 +1,21 @@
+piVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mongodb
+  namespace: argocd  
+spec:
+  destination:
+    namespace: default  
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: 'https://charts.bitnami.com/bitnami'
+    chart: mongodb
+    targetRevision: 13.0.1  
+    helm:
+      valueFiles:
+        - path: values.yaml  
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
