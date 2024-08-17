@@ -46,6 +46,7 @@ kubectl port-forward <mongodb-pod> 27017:27017
 ![curl-ordets.png](mongo-client.png)
 
 ### Deploy new version:
+**connect your AWS credentials** 
 ```
 aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/x2j4b2n8
 ```
