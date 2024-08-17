@@ -8,8 +8,8 @@ https://a7c2a36ee8a0b40498fdcd385161cfeb-1904246993.us-east-2.elb.amazonaws.com/
 http://k8s-default-nodeapps-83b7e9e119-1495603499.us-east-2.elb.amazonaws.com
 
 ## Overview:
-* infra
-* application
+* Infra
+* Application
 * ArgoCD
 
 ### Infra
@@ -45,7 +45,7 @@ kubectl port-forward <mongodb-pod> 27017:27017
 ```
 ![curl-ordets.png](mongo-client.png)
 
-- Deploy new version:
+### Deploy new version:
 ```
 aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/x2j4b2n8
 ```
@@ -58,14 +58,15 @@ docker tag node-app:latest public.ecr.aws/x2j4b2n8/node-app:latest
 ```
 docker push public.ecr.aws/x2j4b2n8/node-app:latest
 ```
--- change new image tag in values file - ArgoCD will sync the changes automaticlly.
+#### change new image tag in values file - ArgoCD will sync the changes automaticlly.
 
-**Argo credentials + bastion key send in the mail.**
+**Argo credentials + bastion key sent in the mail.**
 
 P.S - There is unlimited stuff that can be added and built on top of this deplyment - focused on Argo deployment and infra, will showcase the code and next steps in the next frontal interview (hopefully).
 such as:
 * Add git actions to change ArgoTag automaticlly 
 * Grafana
+* Secrets
 * Scaling
 * Security (JWT, db etc...)
 * Persistence
