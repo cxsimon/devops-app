@@ -14,6 +14,7 @@ resource "aws_subnet" "public_subnet" {
   availability_zone = "us-east-2a" 
   tags = {
     Name = "DevOps-Task-public_subnet"
+    "kubernetes.io/role/elb" = "1"
   }
 }
 
@@ -40,6 +41,7 @@ resource "aws_subnet" "public_subnet_2" {
   availability_zone = "us-east-2b"       
   tags = {
     Name = "DevOps-Task-public_subnet-2"
+    "kubernetes.io/role/elb" = "1"
   }
 }
 
@@ -59,6 +61,7 @@ resource "aws_subnet" "private_subnet" {
   availability_zone = "us-east-2a" 
   tags = {
     Name = "DevOps-Task-private_subnet"
+    "kubernetes.io/role/internal-elb" = "1"
   }
 }
 
@@ -96,6 +99,7 @@ resource "aws_subnet" "private_subnet_2" {
   availability_zone = "us-east-2b"       
   tags = {
     Name = "DevOps-Task-private_subnet-2"
+    "kubernetes.io/role/internal-elb" = "1"
   }
 }
 
