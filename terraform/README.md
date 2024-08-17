@@ -19,3 +19,5 @@ Private Subnets:
 	•	CIDR Block: 172.16.192.0/18
 	•	IP Range: 172.16.192.0 to 172.16.255.255
 	•	Availability Zone: us-east-2b
+
+  tags on subnets
