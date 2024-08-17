@@ -13,7 +13,7 @@ spec:
     targetRevision: 13.0.1  
     helm:
       valueFiles:
-        - path: values.yaml  
+        - path: mongo-values.yaml  
   project: default
   syncPolicy:
     automated:
