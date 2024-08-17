@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: devops-task-node-app
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: true
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+  hosts:
+      paths: ["/"]
+
+mongodb:
+  url: mongodb://mongodb:27017/
+
+resources: {}
