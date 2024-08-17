@@ -22,5 +22,3 @@ spec:
           env:
             - name: MONGODB_URL
               value: {{ .Values.mongodb.url }}
-      imagePullSecrets:
-        - name: regcred
