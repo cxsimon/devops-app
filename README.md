@@ -59,7 +59,7 @@ docker tag node-app:latest public.ecr.aws/x2j4b2n8/node-app:latest
 ```
 docker push public.ecr.aws/x2j4b2n8/node-app:latest
 ```
-#### change new image tag in values file - ArgoCD will sync the changes automaticlly.
+#### ArgoCD will sync the changes automaticlly.
 
 **Argo credentials + bastion key sent in the mail.**
 
